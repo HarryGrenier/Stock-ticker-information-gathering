@@ -20,7 +20,7 @@ tickers_sectors = {
 }
 
 # CSV file setup
-csv_filename = "stock_data_2024.csv"
+csv_filename = "stock_data_2024_1_month.csv"
 header = ["Date", "Ticker", "Sector", "Open", "High", "Low", "Close", "Volume"]
 
 # Open CSV file for writing
@@ -34,7 +34,7 @@ with open(csv_filename, mode="w", newline="") as file:
             stock = yf.Ticker(ticker)
             
             # Fetch data for 2024
-            hist = stock.history(start="2024-01-01", end="2025-01-01")
+            hist = stock.history(start="2024-12-01", end="2025-01-01")
 
             for date, row in hist.iterrows():
                 writer.writerow([
